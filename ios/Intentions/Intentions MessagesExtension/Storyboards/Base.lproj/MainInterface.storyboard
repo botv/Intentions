@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Messages View Controller-->
+        <scene sceneID="7MM-of-jgj">
+            <objects>
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="Intentions_MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
+                        <rect key="frame" x="0.0" y="0.0" width="400" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How do you feel?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fm6-Ij-fIe">
+                                <rect key="frame" x="20" y="40" width="360" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="MQb-2d-dPT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9j-V8-UdP">
+                                <rect key="frame" x="40" y="98" width="320" height="2"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="d9k-5H-0M7"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f8i-xb-0fQ">
+                                <rect key="frame" x="20" y="108" width="360" height="100"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="me7-DB-vqo">
+                                        <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIO-5S-90N">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="🙃"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-Lo-pzv">
+                                                <rect key="frame" x="60" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😢"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZz-3t-lGP">
+                                                <rect key="frame" x="120" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="🥰"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3r-9W-PtV">
+                                                <rect key="frame" x="180" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😮"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-8Y-10A">
+                                                <rect key="frame" x="240" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😠"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx1-NK-Ady">
+                                                <rect key="frame" x="300" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😒"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="ffR-Lo-pzv" firstAttribute="width" secondItem="WIO-5S-90N" secondAttribute="width" id="1Z8-sN-qYb"/>
+                                            <constraint firstItem="UZz-3t-lGP" firstAttribute="width" secondItem="WIO-5S-90N" secondAttribute="width" id="MS6-dg-6WS"/>
+                                            <constraint firstItem="qx1-NK-Ady" firstAttribute="width" secondItem="WIO-5S-90N" secondAttribute="width" id="dz6-ab-f4A"/>
+                                            <constraint firstItem="X3r-9W-PtV" firstAttribute="width" secondItem="WIO-5S-90N" secondAttribute="width" id="ma1-An-dXx"/>
+                                            <constraint firstItem="wjo-8Y-10A" firstAttribute="width" secondItem="WIO-5S-90N" secondAttribute="width" id="tor-vd-Joq"/>
+                                        </constraints>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbq-0j-4EG">
+                                        <rect key="frame" x="0.0" y="50" width="360" height="50"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay6-dO-0WY">
+                                                <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😟"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDL-9J-hvu">
+                                                <rect key="frame" x="60" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😌"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fZ-Sx-qrM">
+                                                <rect key="frame" x="120" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😛"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqc-dE-6yP">
+                                                <rect key="frame" x="180" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😡"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9N-XA-6Wu">
+                                                <rect key="frame" x="240" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="🤗"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71u-0Z-a9x">
+                                                <rect key="frame" x="300" y="0.0" width="60" height="50"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="45"/>
+                                                <state key="normal" title="😐"/>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="6fZ-Sx-qrM" firstAttribute="width" secondItem="Ay6-dO-0WY" secondAttribute="width" id="802-KS-j98"/>
+                                            <constraint firstItem="N9N-XA-6Wu" firstAttribute="width" secondItem="Ay6-dO-0WY" secondAttribute="width" id="FnY-gW-cby"/>
+                                            <constraint firstItem="pqc-dE-6yP" firstAttribute="width" secondItem="Ay6-dO-0WY" secondAttribute="width" id="hbv-jW-PHh"/>
+                                            <constraint firstItem="hDL-9J-hvu" firstAttribute="width" secondItem="Ay6-dO-0WY" secondAttribute="width" id="rhg-6k-fx1"/>
+                                            <constraint firstItem="71u-0Z-a9x" firstAttribute="width" secondItem="Ay6-dO-0WY" secondAttribute="width" id="tfk-cE-UVn"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ETr-u3-mFf"/>
+                                    <constraint firstItem="Nbq-0j-4EG" firstAttribute="height" secondItem="me7-DB-vqo" secondAttribute="height" id="Fv9-vP-OeU"/>
+                                    <constraint firstItem="me7-DB-vqo" firstAttribute="leading" secondItem="f8i-xb-0fQ" secondAttribute="leading" id="Rv5-An-V1n"/>
+                                    <constraint firstItem="me7-DB-vqo" firstAttribute="top" secondItem="f8i-xb-0fQ" secondAttribute="top" id="YOX-w9-cbo"/>
+                                    <constraint firstAttribute="trailing" secondItem="me7-DB-vqo" secondAttribute="trailing" id="lDj-yz-n3o"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-gW-l9s">
+                                <rect key="frame" x="40" y="216" width="320" height="2"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="I2G-rb-bLR"/>
+                                    <constraint firstAttribute="height" constant="2" id="Ld1-QP-vd0"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="fm6-Ij-fIe" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="20" id="68X-XL-5b7"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="fm6-Ij-fIe" secondAttribute="trailing" constant="20" id="7ML-qR-xvn"/>
+                            <constraint firstItem="vk3-gW-l9s" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" constant="40" id="9mF-XW-cOa"/>
+                            <constraint firstItem="f8i-xb-0fQ" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="20" id="MyU-vm-XCo"/>
+                            <constraint firstAttribute="trailing" secondItem="vk3-gW-l9s" secondAttribute="trailing" constant="40" id="NnB-R4-O6f"/>
+                            <constraint firstItem="Q9j-V8-UdP" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="40" id="QRh-5h-XlT"/>
+                            <constraint firstItem="f8i-xb-0fQ" firstAttribute="top" secondItem="Q9j-V8-UdP" secondAttribute="bottom" constant="8" id="Rcb-Ra-kYB"/>
+                            <constraint firstItem="fm6-Ij-fIe" firstAttribute="top" secondItem="LDy-ih-0nr" secondAttribute="top" constant="20" id="Wdf-hF-OAc"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="f8i-xb-0fQ" secondAttribute="trailing" constant="20" id="alu-Kz-Y5N"/>
+                            <constraint firstItem="vk3-gW-l9s" firstAttribute="top" secondItem="f8i-xb-0fQ" secondAttribute="bottom" constant="8" id="equ-0C-895"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="Q9j-V8-UdP" secondAttribute="trailing" constant="40" id="q7c-9f-dae"/>
+                            <constraint firstItem="Q9j-V8-UdP" firstAttribute="top" secondItem="fm6-Ij-fIe" secondAttribute="bottom" constant="8" id="y8M-lD-z9V"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LDy-ih-0nr"/>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="400" height="600"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.799999999999997" y="27.886056971514247"/>
+        </scene>
+    </scenes>
+</document>

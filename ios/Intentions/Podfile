@@ -14,5 +14,7 @@ target 'Intentions MessagesExtension' do
   use_frameworks!
 
   # Pods for Intentions MessagesExtension
+  pod 'Firebase/Core'
+  pod 'Firebase/MLModelInterpreter'
 
 end
