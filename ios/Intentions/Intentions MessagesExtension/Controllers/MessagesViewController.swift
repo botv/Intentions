@@ -12,22 +12,14 @@ import Messages
 class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var messageTextField: UITextField! {
+    @IBOutlet weak var messageViewHeightLayoutConstraint: NSLayoutConstraint!
+    @IBOutlet weak var messageTextView: UITextView! {
         didSet {
-            // Round corners.
-            messageTextField.layer.cornerRadius = 20.0
-            messageTextField.layer.masksToBounds = true
-            messageTextField.layer.borderWidth = 0.5
-            messageTextField.layer.borderColor = UIColor.lightGray.cgColor
-            
-            // Set left padding.
-            messageTextField.leftView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 5.0, height: 2.0))
-            messageTextField.leftViewMode = .always
-            
-            // Set right padding.
-            messageTextField.rightView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 40.0, height: 2.0))
-            messageTextField.rightViewMode = .always
-            
+            messageTextView.layer.cornerRadius = 20.0
+            messageTextView.layer.masksToBounds = true
+            messageTextView.layer.borderWidth = 0.5
+            messageTextView.layer.borderColor = UIColor.lightGray.cgColor
+            messageTextView.textContainerInset = UIEdgeInsets(top: 8, left: 10.0, bottom: 8, right: 40.0);
         }
     }
     
@@ -69,4 +61,24 @@ class MessagesViewController: MSMessagesAppViewController {
         savedConversation?.sendText(message, completionHandler: nil)
     }
     
+}
+
+extension MessagesViewController: UITextViewDelegate {
+    func textViewDidChange(_ textView: UITextView) {
+        // Adjust text view height.
+        let fixedWidth = textView.frame.size.width
+        let currentHeight = textView.frame.size.height
+        let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
+        
+        // Check if text view is growing or shrinking.
+        if currentHeight > newSize.height || (currentHeight < newSize.height && messageViewHeightLayoutConstraint.constant < 108.0) {
+            textView.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
+            
+            // Adjust parent view height.
+            messageViewHeightLayoutConstraint.constant = newSize.height + 20.0
+            
+            // Set scrolling.
+            messageTextView.isScrollEnabled = messageViewHeightLayoutConstraint.constant == 108.0
+        }
+    }
 }

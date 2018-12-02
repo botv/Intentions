@@ -141,32 +141,21 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R3-OC-WM8">
                                 <rect key="frame" x="0.0" y="540" width="400" height="60"/>
                                 <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="iMessage" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ptf-68-C1T">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="iMessage" translatesAutoresizingMaskIntoConstraints="NO" id="5RQ-Fi-0ow">
                                         <rect key="frame" x="10" y="10" width="380" height="40"/>
-                                        <color key="backgroundColor" red="0.9907938106402272" green="0.98600736711056436" blue="0.99558025416989016" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="textColor"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardType="alphabet"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                                <integer key="value" value="20"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="YES"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                                <color key="value" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
-                                                <integer key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="ObA-dk-sSI" id="PaJ-7d-wbh"/>
+                                        </connections>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RCf-tl-gzR">
                                         <rect key="frame" x="355" y="15" width="30" height="30"/>
                                         <color key="backgroundColor" red="0.2037163079" green="0.4708764553" blue="0.96475440260000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="Dgh-uN-3PF"/>
-                                            <constraint firstAttribute="width" secondItem="RCf-tl-gzR" secondAttribute="height" multiplier="1:1" id="fvq-Pl-Il6"/>
-                                            <constraint firstAttribute="height" constant="30" id="tpg-fl-YYy"/>
+                                            <constraint firstAttribute="width" constant="30" id="5pe-uK-Qh1"/>
+                                            <constraint firstAttribute="height" constant="30" id="rYy-vY-C7h"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                         <state key="normal" title="↑">
@@ -177,17 +166,19 @@
                                                 <integer key="value" value="15"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="sendButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="amO-7w-Bio"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="RCf-tl-gzR" firstAttribute="width" secondItem="RCf-tl-gzR" secondAttribute="height" multiplier="1:1" id="8AT-Iz-8Rf"/>
-                                    <constraint firstAttribute="trailing" secondItem="RCf-tl-gzR" secondAttribute="trailing" constant="15" id="Bck-fr-WvN"/>
+                                    <constraint firstAttribute="bottom" secondItem="5RQ-Fi-0ow" secondAttribute="bottom" priority="750" constant="10" id="59A-Cw-5ek"/>
+                                    <constraint firstItem="5RQ-Fi-0ow" firstAttribute="bottom" secondItem="RCf-tl-gzR" secondAttribute="bottom" constant="5" id="8E2-qb-iT8"/>
                                     <constraint firstAttribute="height" constant="60" id="MC5-ML-9UL"/>
-                                    <constraint firstItem="Ptf-68-C1T" firstAttribute="leading" secondItem="5R3-OC-WM8" secondAttribute="leading" constant="10" id="QCl-Uf-noC"/>
-                                    <constraint firstAttribute="bottom" secondItem="RCf-tl-gzR" secondAttribute="bottom" constant="15" id="Qg1-qD-xNK"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ptf-68-C1T" secondAttribute="bottom" constant="10" id="WoN-mB-wbG"/>
-                                    <constraint firstItem="Ptf-68-C1T" firstAttribute="top" secondItem="5R3-OC-WM8" secondAttribute="top" constant="10" id="bAh-yE-fns"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ptf-68-C1T" secondAttribute="trailing" constant="10" id="h96-mv-doT"/>
+                                    <constraint firstItem="5RQ-Fi-0ow" firstAttribute="top" secondItem="5R3-OC-WM8" secondAttribute="top" constant="10" id="T9W-1K-08g"/>
+                                    <constraint firstItem="5RQ-Fi-0ow" firstAttribute="trailing" secondItem="RCf-tl-gzR" secondAttribute="trailing" constant="5" id="joM-cH-UmQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="5RQ-Fi-0ow" secondAttribute="trailing" constant="10" id="qEY-Ed-wI1"/>
+                                    <constraint firstItem="5RQ-Fi-0ow" firstAttribute="leading" secondItem="5R3-OC-WM8" secondAttribute="leading" constant="10" id="yfc-aK-jpW"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -215,7 +206,8 @@
                     <size key="freeformSize" width="400" height="600"/>
                     <connections>
                         <outlet property="keyboardHeightLayoutConstraint" destination="XvC-fo-RKu" id="Ps4-gS-QFk"/>
-                        <outlet property="messageTextField" destination="Ptf-68-C1T" id="n5e-AI-4ji"/>
+                        <outlet property="messageTextView" destination="5RQ-Fi-0ow" id="hTX-gS-qrE"/>
+                        <outlet property="messageViewHeightLayoutConstraint" destination="MC5-ML-9UL" id="ji3-mg-mGV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -1,6 +1,6 @@
-import tensorflow as tf 
+import tensorflow as tf
 import keras
-import numpy as np 
+import numpy as np
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense
@@ -26,8 +26,8 @@ print(Y.shape)
 
 unique = set(Y)
 dictionary = {}
-for i,word in enumerate(unique):
-	dictionary.update({word:i})
+for i, word in enumerate(unique):
+	dictionary.update({word: i})
 for i, cat in enumerate(Y):
 	Y[i] = dictionary.get(cat)
 train_X = X[:35000]
@@ -38,44 +38,30 @@ train_Y = Y[:35000]
 train_Y = to_categorical(train_Y)
 val_Y = Y[-5000:]
 val_Y = to_categorical(val_Y)
-print(train_X.shape , val_X.shape)
+print(train_X.shape, val_X.shape)
 print(train_Y.shape, val_Y.shape)
 
 model = Sequential()
 
-model.add(LSTM(lstm_size, return_sequences = True, input_shape=(train_X.shape[1], train_X.shape[2])))
+model.add(LSTM(lstm_size, return_sequences=True, input_shape=(train_X.shape[1], train_X.shape[2])))
 model.add(Dropout(dropout))
-model.add(Conv1D(filters = 32, kernel_size = 2, padding = 'same', activation = 'relu'))
-model.add(MaxPooling1D(pool_size = 2))
+model.add(Conv1D(filters=32, kernel_size=2, padding='same', activation='relu'))
+model.add(MaxPooling1D(pool_size=2))
 model.add(LSTM(lstm_size))
 model.add(Dropout(dropout))
-#model.add(LSTM(lstm_size))
-#model.add(Dropout(dropout))
+# model.add(LSTM(lstm_size))
+# model.add(Dropout(dropout))
 model.add(Dense(train_Y.shape[1], activation='softmax'))
 
 model.summary()
 
-
-
 model.compile(loss='categorical_crossentropy', optimizer='adam')
 
-tensorboard = TensorBoard(log_dir="logs/{}", histogram_freq=0, batch_size=batch_size, write_graph=False, write_grads=False, write_images=False, embeddings_freq=0, embeddings_layer_names=None, embeddings_metadata=None)
+tensorboard = TensorBoard(log_dir="logs/{}", histogram_freq=0, batch_size=batch_size, write_graph=False,
+                          write_grads=False, write_images=False, embeddings_freq=0, embeddings_layer_names=None,
+                          embeddings_metadata=None)
 
 filepath = "checkpoints/best.hdf5"
 
 checkpoint = ModelCheckpoint(filepath, monitor='loss', verbose=1, save_best_only=False, mode='min')
 model.fit(train_X, train_Y, epochs=epochs, batch_size=batch_size, callbacks=[checkpoint, tensorboard])
-
-
-
-
-
-
-
-
-
-
-
-
-
-
