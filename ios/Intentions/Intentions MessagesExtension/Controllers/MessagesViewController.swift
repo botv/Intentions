@@ -13,18 +13,28 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var messageViewHeightLayoutConstraint: NSLayoutConstraint!
+    
     @IBOutlet weak var messageTextView: UITextView! {
         didSet {
+            // Round corners.
             messageTextView.layer.cornerRadius = 20.0
             messageTextView.layer.masksToBounds = true
             messageTextView.layer.borderWidth = 0.5
             messageTextView.layer.borderColor = UIColor.lightGray.cgColor
+            
+            // Set up padding.
             messageTextView.textContainerInset = UIEdgeInsets(top: 8, left: 10.0, bottom: 8, right: 40.0);
+            
+            // Add placeholder.
+            messageTextView.text = messagePlaceholder
+            messageTextView.textColor = UIColor.lightGray
+            messageTextView.becomeFirstResponder()
+            messageTextView.selectedTextRange = messageTextView.textRange(from: messageTextView.beginningOfDocument, to: messageTextView.beginningOfDocument)
         }
     }
     
     var savedConversation: MSConversation?
-    var message = ""
+    var messagePlaceholder = "iMessage"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,14 +67,30 @@ class MessagesViewController: MSMessagesAppViewController {
         }
     }
     
-    @IBAction func sendButtonTapped(_ sender: Any) {
-        savedConversation?.sendText(message, completionHandler: nil)
+    override func willBecomeActive(with conversation: MSConversation) {
+        savedConversation = conversation
     }
     
+    @IBAction func sendButtonTapped(_ sender: Any) {
+        savedConversation?.sendText(messageTextView.text, completionHandler: nil)
+        messageTextView.text = ""
+        self.textViewDidChange(messageTextView)
+    }
 }
 
 extension MessagesViewController: UITextViewDelegate {
     func textViewDidChange(_ textView: UITextView) {
+        // Add placeholder if there is no text.
+        if textView.text == "" {
+            messageTextView.text = messagePlaceholder
+            messageTextView.textColor = UIColor.lightGray
+            messageTextView.becomeFirstResponder()
+            messageTextView.selectedTextRange = messageTextView.textRange(from: messageTextView.beginningOfDocument, to: messageTextView.beginningOfDocument)
+        } else if textView.textColor == UIColor.lightGray && textView.text != messagePlaceholder {
+            textView.textColor = UIColor.black
+            textView.text = textView.text.replacingOccurrences(of: messagePlaceholder, with: "")
+        }
+        
         // Adjust text view height.
         let fixedWidth = textView.frame.size.width
         let currentHeight = textView.frame.size.height
@@ -79,6 +105,12 @@ extension MessagesViewController: UITextViewDelegate {
             
             // Set scrolling.
             messageTextView.isScrollEnabled = messageViewHeightLayoutConstraint.constant == 108.0
+        }
+    }
+
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+            textView.selectedTextRange = textView.textRange(from: textView.beginningOfDocument, to: textView.beginningOfDocument)
         }
     }
 }
