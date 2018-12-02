@@ -16,5 +16,7 @@ target 'Intentions MessagesExtension' do
   # Pods for Intentions MessagesExtension
   pod 'Firebase/Core'
   pod 'Firebase/MLModelInterpreter'
+  pod 'Alamofire'
+  pod 'SwiftyJSON'
 
 end

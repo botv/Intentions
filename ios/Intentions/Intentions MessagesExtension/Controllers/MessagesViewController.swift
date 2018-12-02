@@ -13,7 +13,7 @@ class MessagesViewController: MSMessagesAppViewController {
     
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var messageViewHeightLayoutConstraint: NSLayoutConstraint!
-    
+    @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var messageTextView: UITextView! {
         didSet {
             // Round corners.
@@ -28,20 +28,17 @@ class MessagesViewController: MSMessagesAppViewController {
             // Add placeholder.
             messageTextView.text = messagePlaceholder
             messageTextView.textColor = UIColor.lightGray
-            messageTextView.becomeFirstResponder()
             messageTextView.selectedTextRange = messageTextView.textRange(from: messageTextView.beginningOfDocument, to: messageTextView.beginningOfDocument)
         }
     }
     
     var savedConversation: MSConversation?
     var messagePlaceholder = "iMessage"
+    var letterCounter = 0
+    let frequency = 8
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Hide the keyboard when it is tapped around.
-        self.hideKeyboardWhenTappedAround()
-        
         // Set notification for keyboard movement.
         NotificationCenter.default.addObserver(self,  selector: #selector(self.keyboardNotification(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
     }
@@ -61,7 +58,7 @@ class MessagesViewController: MSMessagesAppViewController {
             if endFrameY >= UIScreen.main.bounds.size.height {
                 self.keyboardHeightLayoutConstraint?.constant = 0.0
             } else {
-                self.keyboardHeightLayoutConstraint?.constant = 0 - (endFrame?.size.height ?? 0.0)
+                self.keyboardHeightLayoutConstraint?.constant = -(endFrame?.size.height ?? 0.0)
             }
             UIView.animate(withDuration: duration, delay: TimeInterval(0),  options: animationCurve, animations: { self.view.layoutIfNeeded() }, completion: nil)
         }
@@ -72,10 +69,55 @@ class MessagesViewController: MSMessagesAppViewController {
     }
     
     @IBAction func sendButtonTapped(_ sender: Any) {
-        savedConversation?.sendText(messageTextView.text, completionHandler: nil)
-        messageTextView.text = ""
-        self.textViewDidChange(messageTextView)
+        if messageTextView.textColor != UIColor.lightGray {
+            savedConversation?.sendText(messageTextView.text, completionHandler: nil)
+            messageTextView.text = ""
+            self.textViewDidChange(messageTextView)
+        }
     }
+    
+    @IBAction func emotionButtonTapped(_ sender: Any) {
+        guard let button = sender as? UIButton else {
+            return
+        }
+        
+        var emotion = "empty"
+        
+        switch button.tag {
+        case 1:
+            emotion = "happiness"
+        case 2:
+            emotion = "sadness"
+        case 3:
+            emotion = "love"
+        case 4:
+            emotion = "surprise"
+        case 5:
+            emotion = "hatred"
+        case 6:
+            emotion = "boredom"
+        case 7:
+            emotion = "worry"
+        case 8:
+            emotion = "relief"
+        case 9:
+            emotion = "fun"
+        case 10:
+            emotion = "anger"
+        case 11:
+            emotion = "excitement"
+        case 12:
+            emotion = "neutrality"
+        default: break
+        }
+        
+        statusLabel.text = "Intentions will help you convey " + emotion
+        
+        if self.presentationStyle != .expanded {
+            self.requestPresentationStyle(.expanded)
+        }
+    }
+    
 }
 
 extension MessagesViewController: UITextViewDelegate {
@@ -106,6 +148,17 @@ extension MessagesViewController: UITextViewDelegate {
             // Set scrolling.
             messageTextView.isScrollEnabled = messageViewHeightLayoutConstraint.constant == 108.0
         }
+        
+        // Perform emotion analysis.
+        if letterCounter % frequency == 0 {
+            EmotionService.emotion(text: messageTextView.text) { result in
+                guard let result = result else { return }
+                
+                print(result)
+            }
+        }
+        
+        letterCounter += 1
     }
 
     func textViewDidChangeSelection(_ textView: UITextView) {

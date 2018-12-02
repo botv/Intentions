@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (4.7.3)
   - Firebase/Core (5.10.0):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 5.2.0)
@@ -60,14 +61,18 @@ PODS:
     - nanopb/encode (= 0.3.8)
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
+  - SwiftyJSON (4.2.0)
   - TensorFlowLite (1.10.1)
 
 DEPENDENCIES:
+  - Alamofire
   - Firebase/Core
   - Firebase/MLModelInterpreter
+  - SwiftyJSON
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
+    - Alamofire
     - Firebase
     - FirebaseAnalytics
     - FirebaseCore
@@ -78,9 +83,11 @@ SPEC REPOS:
     - GoogleUtilities
     - GTMSessionFetcher
     - nanopb
+    - SwiftyJSON
     - TensorFlowLite
 
 SPEC CHECKSUMS:
+  Alamofire: c7287b6e5d7da964a70935e5db17046b7fde6568
   Firebase: 6691d47562a780c26281ce8464518faafc90c610
   FirebaseAnalytics: 831f1f127f4a75698e9875a87bf7e2668730d953
   FirebaseCore: c6079de64c1a87000e52e9b408dddcadc901177f
@@ -91,8 +98,9 @@ SPEC CHECKSUMS:
   GoogleUtilities: 82f04aeff8426309dbdbc75f6c8accd1e584a5da
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+  SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TensorFlowLite: 6274f29bbf7e234edb3108f0f32728b5a4d53d77
 
-PODFILE CHECKSUM: b6536a547a760cbef4e68c7c64f63a6538699b03
+PODFILE CHECKSUM: 4a44b8742505ccb25cd9afa6ef6269e7fb65e444
 
 COCOAPODS: 1.5.3

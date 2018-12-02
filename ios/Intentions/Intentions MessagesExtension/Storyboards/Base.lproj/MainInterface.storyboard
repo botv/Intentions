@@ -24,51 +24,69 @@
                                     <constraint firstAttribute="height" constant="50" id="MQb-2d-dPT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9j-V8-UdP">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q9j-V8-UdP" userLabel="Separator">
                                 <rect key="frame" x="40" y="86" width="320" height="2"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="d9k-5H-0M7"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f8i-xb-0fQ">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="f8i-xb-0fQ" userLabel="Emojis Stack View">
                                 <rect key="frame" x="20" y="96" width="360" height="100"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="me7-DB-vqo">
                                         <rect key="frame" x="0.0" y="0.0" width="360" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIO-5S-90N">
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WIO-5S-90N">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="🙃"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="6ow-Lb-nLT"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-Lo-pzv">
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-Lo-pzv">
                                                 <rect key="frame" x="60" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😢"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="sak-Pf-sV1"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZz-3t-lGP">
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZz-3t-lGP">
                                                 <rect key="frame" x="120" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="🥰"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="hbW-UC-7vv"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3r-9W-PtV">
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3r-9W-PtV">
                                                 <rect key="frame" x="180" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😮"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="co7-Yz-POF"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-8Y-10A">
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-8Y-10A">
                                                 <rect key="frame" x="240" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😠"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="LBs-e0-eCq"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx1-NK-Ady">
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx1-NK-Ady">
                                                 <rect key="frame" x="300" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😒"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="uyx-og-Avo"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -82,35 +100,53 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Nbq-0j-4EG">
                                         <rect key="frame" x="0.0" y="50" width="360" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay6-dO-0WY">
+                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ay6-dO-0WY">
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😟"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="tb3-mb-MME"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDL-9J-hvu">
+                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDL-9J-hvu">
                                                 <rect key="frame" x="60" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😌"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="skA-TI-QXL"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fZ-Sx-qrM">
+                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fZ-Sx-qrM">
                                                 <rect key="frame" x="120" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😛"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="6n1-f3-6iY"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqc-dE-6yP">
+                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqc-dE-6yP">
                                                 <rect key="frame" x="180" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😡"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="HS3-Vc-nHh"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9N-XA-6Wu">
+                                            <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9N-XA-6Wu">
                                                 <rect key="frame" x="240" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="🤗"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="wrd-sl-7uq"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71u-0Z-a9x">
+                                            <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71u-0Z-a9x">
                                                 <rect key="frame" x="300" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😐"/>
+                                                <connections>
+                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="eHN-d7-Uto"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -130,20 +166,20 @@
                                     <constraint firstAttribute="trailing" secondItem="me7-DB-vqo" secondAttribute="trailing" id="lDj-yz-n3o"/>
                                 </constraints>
                             </stackView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-gW-l9s">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vk3-gW-l9s" userLabel="Separator">
                                 <rect key="frame" x="40" y="204" width="320" height="2"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="2" id="I2G-rb-bLR"/>
                                     <constraint firstAttribute="height" constant="2" id="Ld1-QP-vd0"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R3-OC-WM8">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R3-OC-WM8" userLabel="Message Container View">
                                 <rect key="frame" x="0.0" y="540" width="400" height="60"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="iMessage" translatesAutoresizingMaskIntoConstraints="NO" id="5RQ-Fi-0ow">
                                         <rect key="frame" x="10" y="10" width="380" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <connections>
@@ -181,12 +217,22 @@
                                     <constraint firstItem="5RQ-Fi-0ow" firstAttribute="leading" secondItem="5R3-OC-WM8" secondAttribute="leading" constant="10" id="yfc-aK-jpW"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick an emotion to enable smart prediction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBT-MM-I2D">
+                                <rect key="frame" x="20" y="214" width="360" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="eK2-Mh-baS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fm6-Ij-fIe" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="20" id="68X-XL-5b7"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="fm6-Ij-fIe" secondAttribute="trailing" constant="20" id="7ML-qR-xvn"/>
                             <constraint firstItem="vk3-gW-l9s" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leading" constant="40" id="9mF-XW-cOa"/>
+                            <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="vBT-MM-I2D" secondAttribute="trailing" constant="20" id="HPb-cS-Z7f"/>
                             <constraint firstItem="f8i-xb-0fQ" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="20" id="MyU-vm-XCo"/>
                             <constraint firstAttribute="trailing" secondItem="vk3-gW-l9s" secondAttribute="trailing" constant="40" id="NnB-R4-O6f"/>
                             <constraint firstItem="5R3-OC-WM8" firstAttribute="trailing" secondItem="LDy-ih-0nr" secondAttribute="trailing" id="OaY-Uu-86u"/>
@@ -196,7 +242,9 @@
                             <constraint firstItem="5R3-OC-WM8" firstAttribute="bottom" secondItem="LDy-ih-0nr" secondAttribute="bottom" id="XvC-fo-RKu"/>
                             <constraint firstItem="5R3-OC-WM8" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" id="ZT5-zF-q29"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="f8i-xb-0fQ" secondAttribute="trailing" constant="20" id="alu-Kz-Y5N"/>
+                            <constraint firstItem="vBT-MM-I2D" firstAttribute="top" secondItem="vk3-gW-l9s" secondAttribute="bottom" constant="8" id="eHk-jm-LI1"/>
                             <constraint firstItem="vk3-gW-l9s" firstAttribute="top" secondItem="f8i-xb-0fQ" secondAttribute="bottom" constant="8" id="equ-0C-895"/>
+                            <constraint firstItem="vBT-MM-I2D" firstAttribute="leading" secondItem="LDy-ih-0nr" secondAttribute="leading" constant="20" id="osO-Yb-l37"/>
                             <constraint firstItem="LDy-ih-0nr" firstAttribute="trailing" secondItem="Q9j-V8-UdP" secondAttribute="trailing" constant="40" id="q7c-9f-dae"/>
                             <constraint firstItem="Q9j-V8-UdP" firstAttribute="top" secondItem="fm6-Ij-fIe" secondAttribute="bottom" constant="8" id="y8M-lD-z9V"/>
                         </constraints>
@@ -208,6 +256,7 @@
                         <outlet property="keyboardHeightLayoutConstraint" destination="XvC-fo-RKu" id="Ps4-gS-QFk"/>
                         <outlet property="messageTextView" destination="5RQ-Fi-0ow" id="hTX-gS-qrE"/>
                         <outlet property="messageViewHeightLayoutConstraint" destination="MC5-ML-9UL" id="ji3-mg-mGV"/>
+                        <outlet property="statusLabel" destination="vBT-MM-I2D" id="n23-Zn-TZE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
