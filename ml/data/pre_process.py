@@ -37,7 +37,7 @@ class pre_process(object):
 				content[i][j] = dictionary.get(word)
 		content = self.pad(content)
 		content = np.asarray(content)
-		sentiment = self.binarize(sentiment)
+		sentiment = np.asarray(sentiment)
 		np.save(self.content_dir, content)
 		np.save(self.sentiment_dir, sentiment)
 		
@@ -49,6 +49,7 @@ class pre_process(object):
 				words.append(word)
 
 		unique = list(set(words))
+		print(len(unique))
 		dictionary = {}
 		for index, word in enumerate(unique):
 			dictionary.update({word:index+1})
@@ -58,11 +59,6 @@ class pre_process(object):
 	def pad(self, sentences):
 		sentences = pad_sequences(sequences =sentences , padding='pre', truncating='pre', maxlen = 150)
 		return sentences
-
-	def binarize(self, labels):
-		lb = LabelBinarizer()
-		labels = lb.fit_transform(np.asarray(labels))
-		return labels
 
 
 processor = pre_process('text_emotion.csv', 'content.npy', 'sentiment.npy')
