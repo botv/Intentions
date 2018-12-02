@@ -176,7 +176,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5R3-OC-WM8" userLabel="Message Container View">
                                 <rect key="frame" x="0.0" y="540" width="400" height="60"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" text="iMessage" translatesAutoresizingMaskIntoConstraints="NO" id="5RQ-Fi-0ow">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5RQ-Fi-0ow">
                                         <rect key="frame" x="10" y="10" width="380" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -217,7 +217,7 @@
                                     <constraint firstItem="5RQ-Fi-0ow" firstAttribute="leading" secondItem="5R3-OC-WM8" secondAttribute="leading" constant="10" id="yfc-aK-jpW"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick an emotion to enable smart prediction" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBT-MM-I2D">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type something to know how you sound." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vBT-MM-I2D">
                                 <rect key="frame" x="20" y="214" width="360" height="20"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="eK2-Mh-baS"/>
@@ -253,10 +253,22 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="600"/>
                     <connections>
+                        <outlet property="angerEmotionButton" destination="pqc-dE-6yP" id="9IO-sL-05V"/>
+                        <outlet property="boredEmotionButton" destination="qx1-NK-Ady" id="OKV-sx-cxx"/>
+                        <outlet property="excitedEmotionButton" destination="N9N-XA-6Wu" id="PSD-Sl-ori"/>
+                        <outlet property="funEmotionButton" destination="6fZ-Sx-qrM" id="MuV-zL-505"/>
+                        <outlet property="happyEmotionButton" destination="WIO-5S-90N" id="T6y-Jl-Mhe"/>
+                        <outlet property="hateEmotionButton" destination="wjo-8Y-10A" id="Tbd-OD-EZa"/>
                         <outlet property="keyboardHeightLayoutConstraint" destination="XvC-fo-RKu" id="Ps4-gS-QFk"/>
+                        <outlet property="loveEmotionButton" destination="UZz-3t-lGP" id="aQ9-ic-oL4"/>
                         <outlet property="messageTextView" destination="5RQ-Fi-0ow" id="hTX-gS-qrE"/>
                         <outlet property="messageViewHeightLayoutConstraint" destination="MC5-ML-9UL" id="ji3-mg-mGV"/>
+                        <outlet property="neutralEmotionButton" destination="71u-0Z-a9x" id="eSF-0i-Yi8"/>
+                        <outlet property="relievedEmotionButton" destination="hDL-9J-hvu" id="TFz-tn-tCd"/>
+                        <outlet property="sadEmotionButton" destination="ffR-Lo-pzv" id="8Yw-yI-bNu"/>
                         <outlet property="statusLabel" destination="vBT-MM-I2D" id="n23-Zn-TZE"/>
+                        <outlet property="surpriseEmotionButton" destination="X3r-9W-PtV" id="CZ4-AH-X8B"/>
+                        <outlet property="worriedEmotionButton" destination="Ay6-dO-0WY" id="nBY-yE-WeU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>

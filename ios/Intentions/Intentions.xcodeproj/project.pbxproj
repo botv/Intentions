@@ -10,6 +10,7 @@
 		1DC1F68BD4149C31F8AA2602 /* Pods_Intentions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8E15E81A45AFBF41D919FF8 /* Pods_Intentions.framework */; };
 		C05C952CDB4C7A430AD9CCA5 /* Pods_Intentions_MessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 044DF86E540E2D0D5A1D8DA3 /* Pods_Intentions_MessagesExtension.framework */; };
 		F747039E21B3F1AC00F29E7E /* EmotionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F747039D21B3F1AC00F29E7E /* EmotionService.swift */; };
+		F74703A021B400DF00F29E7E /* UIButton+Wiggle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F747039F21B400DF00F29E7E /* UIButton+Wiggle.swift */; };
 		F79004C221B31351002ADF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79004C121B31351002ADF34 /* Assets.xcassets */; };
 		F79004C921B31351002ADF34 /* Intentions MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = F79004C821B31351002ADF34 /* Intentions MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		F79004CE21B31351002ADF34 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F79004CD21B31351002ADF34 /* Messages.framework */; };
@@ -52,6 +53,7 @@
 		E8E15E81A45AFBF41D919FF8 /* Pods_Intentions.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Intentions.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F3FE228F0054A9DAF682E988 /* Pods-Intentions MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Intentions MessagesExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Intentions MessagesExtension/Pods-Intentions MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
 		F747039D21B3F1AC00F29E7E /* EmotionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmotionService.swift; sourceTree = "<group>"; };
+		F747039F21B400DF00F29E7E /* UIButton+Wiggle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Wiggle.swift"; sourceTree = "<group>"; };
 		F79004BE21B31350002ADF34 /* Intentions.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Intentions.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F79004C121B31351002ADF34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F79004C321B31351002ADF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -191,6 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				F7B1439821B36A040056024A /* UIViewController+Keyboard.swift */,
+				F747039F21B400DF00F29E7E /* UIButton+Wiggle.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F74703A021B400DF00F29E7E /* UIButton+Wiggle.swift in Sources */,
 				F79004D121B31351002ADF34 /* MessagesViewController.swift in Sources */,
 				F747039E21B3F1AC00F29E7E /* EmotionService.swift in Sources */,
 				F7B1439921B36A040056024A /* UIViewController+Keyboard.swift in Sources */,

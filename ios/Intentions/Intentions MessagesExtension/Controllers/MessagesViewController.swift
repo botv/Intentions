@@ -14,6 +14,18 @@ class MessagesViewController: MSMessagesAppViewController {
     @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var messageViewHeightLayoutConstraint: NSLayoutConstraint!
     @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var happyEmotionButton: UIButton!
+    @IBOutlet weak var sadEmotionButton: UIButton!
+    @IBOutlet weak var loveEmotionButton: UIButton!
+    @IBOutlet weak var surpriseEmotionButton: UIButton!
+    @IBOutlet weak var hateEmotionButton: UIButton!
+    @IBOutlet weak var boredEmotionButton: UIButton!
+    @IBOutlet weak var worriedEmotionButton: UIButton!
+    @IBOutlet weak var relievedEmotionButton: UIButton!
+    @IBOutlet weak var funEmotionButton: UIButton!
+    @IBOutlet weak var angerEmotionButton: UIButton!
+    @IBOutlet weak var excitedEmotionButton: UIButton!
+    @IBOutlet weak var neutralEmotionButton: UIButton!
     @IBOutlet weak var messageTextView: UITextView! {
         didSet {
             // Round corners.
@@ -75,49 +87,6 @@ class MessagesViewController: MSMessagesAppViewController {
             self.textViewDidChange(messageTextView)
         }
     }
-    
-    @IBAction func emotionButtonTapped(_ sender: Any) {
-        guard let button = sender as? UIButton else {
-            return
-        }
-        
-        var emotion = "empty"
-        
-        switch button.tag {
-        case 1:
-            emotion = "happiness"
-        case 2:
-            emotion = "sadness"
-        case 3:
-            emotion = "love"
-        case 4:
-            emotion = "surprise"
-        case 5:
-            emotion = "hatred"
-        case 6:
-            emotion = "boredom"
-        case 7:
-            emotion = "worry"
-        case 8:
-            emotion = "relief"
-        case 9:
-            emotion = "fun"
-        case 10:
-            emotion = "anger"
-        case 11:
-            emotion = "excitement"
-        case 12:
-            emotion = "neutrality"
-        default: break
-        }
-        
-        statusLabel.text = "Intentions will help you convey " + emotion
-        
-        if self.presentationStyle != .expanded {
-            self.requestPresentationStyle(.expanded)
-        }
-    }
-    
 }
 
 extension MessagesViewController: UITextViewDelegate {
@@ -154,7 +123,25 @@ extension MessagesViewController: UITextViewDelegate {
             EmotionService.emotion(text: messageTextView.text) { result in
                 guard let result = result else { return }
                 
-                print(result)
+                self.statusLabel.text = EmotionService.sentence(emotion: result)
+                
+                switch result {
+                case "Bored":
+                    self.boredEmotionButton.wiggle()
+                case "Sarcasm":
+                    self.funEmotionButton.wiggle()
+                case "Angry":
+                    self.angerEmotionButton.wiggle()
+                case "Sad":
+                    self.sadEmotionButton.wiggle()
+                case "Fear":
+                    self.worriedEmotionButton.wiggle()
+                case "Excited":
+                    self.excitedEmotionButton.wiggle()
+                case "Happy":
+                    self.happyEmotionButton.wiggle()
+                default: break
+                }
             }
         }
         

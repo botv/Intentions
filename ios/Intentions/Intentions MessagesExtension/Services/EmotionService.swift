@@ -11,6 +11,19 @@ import Alamofire
 import SwiftyJSON
 
 struct EmotionService {
+    static func sentence(emotion: String) -> String {
+        switch emotion {
+        case "Bored": return "You sound bored :|"
+        case "Sarcasm": return "You sound sarcastic ;/"
+        case "Angry": return "You sound angry >:("
+        case "Sad": return "You sound sad :("
+        case "Fear": return "You sound scared :o"
+        case "Excited": return "You sound excited :D"
+        case "Happy": return "You sound happy :)"
+        default: return "Type something to know how you sound."
+        }
+    }
+    
     static func emotion(text: String, completion: @escaping (String?) -> Void) {
         let parameters: Parameters = [
             "api_key": "Pc95sWKl9x1WUpjS8dZvyjNZnt6TNSRtkem3qSOlVcI",
