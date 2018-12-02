@@ -16,6 +16,7 @@
 		F79004D421B31351002ADF34 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F79004D221B31351002ADF34 /* MainInterface.storyboard */; };
 		F79004D621B31352002ADF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79004D521B31352002ADF34 /* Assets.xcassets */; };
 		F7B1439621B328900056024A /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B1439521B328900056024A /* Sentiment.swift */; };
+		F7B1439921B36A040056024A /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B1439821B36A040056024A /* UIViewController+Keyboard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		F79004D521B31352002ADF34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F79004D721B31352002ADF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F7B1439521B328900056024A /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
+		F7B1439821B36A040056024A /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 		F79004CF21B31351002ADF34 /* Intentions MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				F7B1439721B369E10056024A /* Extensions */,
 				F7B1439221B324540056024A /* Storyboards */,
 				F7B1439121B3244B0056024A /* Controllers */,
 				F7B1439021B324410056024A /* Models */,
@@ -171,6 +174,14 @@
 				F79004C321B31351002ADF34 /* Info.plist */,
 			);
 			path = Supporting;
+			sourceTree = "<group>";
+		};
+		F7B1439721B369E10056024A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				F7B1439821B36A040056024A /* UIViewController+Keyboard.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		FF56815826125A5BCA6E27CA /* Pods */ = {
@@ -349,6 +360,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F79004D121B31351002ADF34 /* MessagesViewController.swift in Sources */,
+				F7B1439921B36A040056024A /* UIViewController+Keyboard.swift in Sources */,
 				F7B1439621B328900056024A /* Sentiment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
