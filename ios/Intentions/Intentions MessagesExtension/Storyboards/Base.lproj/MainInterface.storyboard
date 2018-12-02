@@ -44,49 +44,31 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="🙃"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="6ow-Lb-nLT"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ffR-Lo-pzv">
                                                 <rect key="frame" x="60" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😢"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="sak-Pf-sV1"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZz-3t-lGP">
                                                 <rect key="frame" x="120" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="🥰"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="hbW-UC-7vv"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3r-9W-PtV">
                                                 <rect key="frame" x="180" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😮"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="co7-Yz-POF"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wjo-8Y-10A">
                                                 <rect key="frame" x="240" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😠"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="LBs-e0-eCq"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qx1-NK-Ady">
                                                 <rect key="frame" x="300" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😒"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="uyx-og-Avo"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -104,49 +86,31 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😟"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="tb3-mb-MME"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hDL-9J-hvu">
                                                 <rect key="frame" x="60" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😌"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="skA-TI-QXL"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6fZ-Sx-qrM">
                                                 <rect key="frame" x="120" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😛"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="6n1-f3-6iY"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pqc-dE-6yP">
                                                 <rect key="frame" x="180" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😡"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="HS3-Vc-nHh"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="11" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N9N-XA-6Wu">
                                                 <rect key="frame" x="240" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="🤗"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="wrd-sl-7uq"/>
-                                                </connections>
                                             </button>
                                             <button opaque="NO" tag="12" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="71u-0Z-a9x">
                                                 <rect key="frame" x="300" y="0.0" width="60" height="50"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="45"/>
                                                 <state key="normal" title="😐"/>
-                                                <connections>
-                                                    <action selector="emotionButtonTapped:" destination="ObA-dk-sSI" eventType="touchUpInside" id="eHN-d7-Uto"/>
-                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>

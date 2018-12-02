@@ -11,10 +11,12 @@ import UIKit
 
 extension UIButton {
     func wiggle() {
-        let animation = CAKeyframeAnimation(keyPath: "transform.translation.x")
-        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.linear)
-        animation.duration = 0.6
-        animation.values = [-20.0, 20.0, -20.0, 20.0, -10.0, 10.0, -5.0, 5.0, 0.0 ]
-        layer.add(animation, forKey: "shake")
+        let wiggleAnim = CABasicAnimation(keyPath: "position")
+        wiggleAnim.duration = 0.1
+        wiggleAnim.repeatCount = 2
+        wiggleAnim.autoreverses = true
+        wiggleAnim.fromValue = CGPoint(x: self.center.x - 4.0, y: self.center.y)
+        wiggleAnim.toValue = CGPoint(x: self.center.x + 4.0, y: self.center.y)
+        layer.add(wiggleAnim, forKey: "position")
     }
 }
