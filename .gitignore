@@ -360,7 +360,8 @@ iOSInjectionProject/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -381,5 +382,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-# Machine learning (temporary)
-ml/
+# Machine learning Data
+ml/data
