@@ -22,8 +22,10 @@
 	<string>1</string>
 	<key>NSExtension</key>
 	<dict>
+		<key>New item</key>
+		<string></string>
 		<key>NSExtensionMainStoryboard</key>
-		<string>MainInterface</string>
+		<string>Main</string>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.message-payload-provider</string>
 	</dict>

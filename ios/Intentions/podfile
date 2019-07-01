@@ -1,5 +1,5 @@
 # Uncomment the next line to define a global platform for your project
-# platform :ios, '9.0'
+platform :ios, '12.1'
 
 target 'Intentions' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
@@ -14,9 +14,8 @@ target 'Intentions MessagesExtension' do
   use_frameworks!
 
   # Pods for Intentions MessagesExtension
-  pod 'Firebase/Core'
-  pod 'Firebase/MLModelInterpreter'
-  pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Alamofire'
+  pod 'UITextView+Placeholder'
 
 end
