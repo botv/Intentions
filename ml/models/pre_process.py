@@ -13,9 +13,11 @@ import re
 class Pre_Process(object):
 
 	def __init__(
-			self, processed_input_dir, processed_label_dir,
+			self, text_dir, chunk_size, processed_input_dir, processed_label_dir,
 			BUFFER_SIZE, BATCH_SIZE, TAKE_SIZE
 			):
+		self.text_dir = text_dir
+		self.chunk_size = chunk_size
 		self.processed_input_dir = processed_input_dir
 		self.processed_label_dir = processed_label_dir
 		self.BUFFER_SIZE = BUFFER_SIZE
@@ -34,8 +36,6 @@ class Pre_Process(object):
 					)
 				processed_text = processed_text.strip()
 				processed_text = nltk.word_tokenize(processed_text)
-				processed_text = [word for word in processed_text
-				 if word not in stopwords.words('english')]
 				processed_text = ' '.join([str(w) for w in processed_text])
 				with open(self.processed_input_dir, 'a') as pid:
 					pid.write(processed_text + '\n')
@@ -50,7 +50,6 @@ class Pre_Process(object):
 		data = tf.data.Dataset.zip((content_dataset,sentiment_dataset))
 		data = data.shuffle(
 				self.BUFFER_SIZE,
-				reshuffle_each_iteration=False
 				)
 
 		tokenizer = tfds.features.text.Tokenizer()
@@ -90,16 +89,13 @@ class Pre_Process(object):
 		test_data = test_data.padded_batch(self.BATCH_SIZE, padded_shapes=([-1],[-1]))
 
 		return train_data, test_data, vocab_size, label_size
-'''
-if __name__ == '__main__':
-	p = Pre_Process(
-		2,'../data/text_emotion.csv',5000,
-		'../data/content.txt', '../data/label.txt',
-		'../data/content_dict.p', '../data/sentiment_dict.p',
-		40000, 10000, 5000
-	)
-	#p.clean_text()
+#if __name__ == '__main__':
+	# p = Pre_Process(
+	# 	'../data/text_emotion.csv', 5000,
+	# 	'../data/content.txt', '../data/label.txt',
+	# 	40000, 10000, 5000
+	# )
+	# p.clean_text()
 	#p.build_dataset()
 	#content_dict,sentiment_dict = p.retrieve_vocab()
 	#p.enumerate(content_dict,sentiment_dict)
-'''

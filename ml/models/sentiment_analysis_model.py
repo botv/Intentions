@@ -3,24 +3,28 @@ from tensorflow.keras.layers import (
 	Dense,
 	LSTM,
 	Embedding,
-	Bidirectional
+	Bidirectional,
+	BatchNormalization
 	)
 from tensorflow.keras import Model
 import numpy as np
+
+from p2 import *
 
 import pre_process
 
 tf.keras.backend.clear_session()
 
-p = pre_process.Pre_Process('../data/content.txt', '../data/label.txt',40000, 10000, 5000)
+p = pre_process.Pre_Process('../data/text_emotion.csv', 1,
+	'../data/content.txt', '../data/label.txt',40000, 5000, 5000)
 
-train_ds, test_ds, VOCAB_SIZE, NUM_LABELS = p.build_dataset()
+train_ds, test_ds, VOCAB_SIZE, LABEL_SIZE = p.build_dataset()
 
-EMBEDDING_DIM = 100
+EMBEDDING_DIM = 64
 #NUM_FATURES =
 SAVE_PATH = '../saved_models/sentiment_analysis_model'
-EPOCHS = 500
-LSTM_CELLS_1 = 256
+EPOCHS = 1000
+LSTM_CELLS_1 = 64
 LSTM_CELLS_2 = 128
 DENSE_UNITS_1 = 64
 DENSE_UNITS_2 = 32
@@ -31,13 +35,17 @@ class sentiment_analysis_lstm(Model):
 		self.embedding_1 = Embedding(VOCAB_SIZE,EMBEDDING_DIM)
 		self.lstm_1 = Bidirectional(LSTM(LSTM_CELLS_1, return_sequences=True))
 		self.lstm_2 = Bidirectional(LSTM(LSTM_CELLS_2))
+		self.normalization = BatchNormalization()
 		self.dense_1 = Dense(DENSE_UNITS_1, activation='relu')
 		self.dense_2 = Dense(DENSE_UNITS_2, activation='relu')
-		self.dense_3 = Dense(NUM_LABELS, activation='softmax')
+		self.dense_3 = Dense(LABEL_SIZE, activation='softmax')
 	def call(self,x):
+		print(x.shape)
+		#print(x.get_shape())
 		x = self.embedding_1(x)
 		x = self.lstm_1(x)
 		x = self.lstm_2(x)
+		x = self.normalization(x)
 		x = self.dense_1(x)
 		x = self.dense_2(x)
 		x = self.dense_3(x)
@@ -50,7 +58,7 @@ model = sentiment_analysis_lstm()
 
 
 loss_object = tf.keras.losses.CategoricalCrossentropy()
-optimizer = tf.keras.optimizers.Adam()
+optimizer = tf.keras.optimizers.RMSprop(learning_rate=0.000001)
 
 train_loss = tf.keras.metrics.Mean(name='train_loss')
 train_accuracy = tf.keras.metrics.CategoricalAccuracy(name='train_accuracy')
