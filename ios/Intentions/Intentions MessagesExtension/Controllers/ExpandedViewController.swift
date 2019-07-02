@@ -11,11 +11,12 @@ import Messages
 import UITextView_Placeholder
 
 class ExpandedViewController: MSMessagesAppViewController {
-    
-    @IBOutlet weak var keyboardHeightLayoutConstraint: NSLayoutConstraint!
-    @IBOutlet weak var messageViewHeightLayoutConstraint: NSLayoutConstraint!
+
+    @IBOutlet weak var messageViewHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var inputContainerView: UIView!
+    
+    // Emotion buttons
     @IBOutlet weak var happyEmotionButton: UIButton!
     @IBOutlet weak var sadEmotionButton: UIButton!
     @IBOutlet weak var loveEmotionButton: UIButton!
@@ -28,6 +29,8 @@ class ExpandedViewController: MSMessagesAppViewController {
     @IBOutlet weak var angerEmotionButton: UIButton!
     @IBOutlet weak var excitedEmotionButton: UIButton!
     @IBOutlet weak var neutralEmotionButton: UIButton!
+    
+    // Message input text view setup
     @IBOutlet weak var messageTextView: UITextView! {
         didSet {
             // Round corners.
@@ -44,7 +47,6 @@ class ExpandedViewController: MSMessagesAppViewController {
         }
     }
     
-    
     var savedConversation: MSConversation?
     var messagePlaceholder = "iMessage"
     var letterCounter = 0
@@ -52,6 +54,15 @@ class ExpandedViewController: MSMessagesAppViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Set up multiline label
+        statusLabel.sizeToFit()
+        
+        // Align text input to keyboard top
+        inputContainerView.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor).isActive = true
+        
+        // Hide the keyboard when the user clicks on the screen
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -64,6 +75,7 @@ class ExpandedViewController: MSMessagesAppViewController {
         if presentationStyle == .expanded {
             self.view.isHidden = false
             inputContainerView.becomeFirstResponder()
+            view.layoutIfNeeded()
         }
     }
 
@@ -88,14 +100,14 @@ extension ExpandedViewController: UITextViewDelegate {
         let newSize = textView.sizeThatFits(CGSize(width: fixedWidth, height: CGFloat.greatestFiniteMagnitude))
         
         // Check if text view is growing or shrinking.
-        if currentHeight > newSize.height || (currentHeight < newSize.height && messageViewHeightLayoutConstraint.constant < 108.0) {
+        if currentHeight > newSize.height || (currentHeight < newSize.height && messageViewHeightConstraint.constant < 108.0) {
             textView.frame.size = CGSize(width: max(newSize.width, fixedWidth), height: newSize.height)
             
             // Adjust parent view height.
-            messageViewHeightLayoutConstraint.constant = newSize.height + 20.0
+            messageViewHeightConstraint.constant = newSize.height + 20.0
             
             // Set scrolling.
-            messageTextView.isScrollEnabled = messageViewHeightLayoutConstraint.constant == 108.0
+            messageTextView.isScrollEnabled = messageViewHeightConstraint.constant == 108.0
         }
         
         // Perform emotion analysis.

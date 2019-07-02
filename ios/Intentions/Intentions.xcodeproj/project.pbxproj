@@ -17,6 +17,7 @@
 		F79004D121B31351002ADF34 /* ExpandedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F79004D021B31351002ADF34 /* ExpandedViewController.swift */; };
 		F79004D421B31351002ADF34 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F79004D221B31351002ADF34 /* Main.storyboard */; };
 		F79004D621B31352002ADF34 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F79004D521B31352002ADF34 /* Assets.xcassets */; };
+		F7ACE7BD22CAF0E1009917D0 /* Keyboard+LayoutGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7ACE7BC22CAF0E1009917D0 /* Keyboard+LayoutGuide.swift */; };
 		F7B1439621B328900056024A /* Sentiment.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B1439521B328900056024A /* Sentiment.swift */; };
 		F7B1439921B36A040056024A /* UIViewController+Keyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = F7B1439821B36A040056024A /* UIViewController+Keyboard.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		F79004D321B31351002ADF34 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F79004D521B31352002ADF34 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F79004D721B31352002ADF34 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F7ACE7BC22CAF0E1009917D0 /* Keyboard+LayoutGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Keyboard+LayoutGuide.swift"; sourceTree = "<group>"; };
 		F7B1439521B328900056024A /* Sentiment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sentiment.swift; sourceTree = "<group>"; };
 		F7B1439821B36A040056024A /* UIViewController+Keyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Keyboard.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -193,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				F7B1439821B36A040056024A /* UIViewController+Keyboard.swift */,
+				F7ACE7BC22CAF0E1009917D0 /* Keyboard+LayoutGuide.swift */,
 				F747039F21B400DF00F29E7E /* UIButton+Wiggle.swift */,
 			);
 			path = Extensions;
@@ -371,6 +374,7 @@
 				F74703A021B400DF00F29E7E /* UIButton+Wiggle.swift in Sources */,
 				F79004D121B31351002ADF34 /* ExpandedViewController.swift in Sources */,
 				F747039E21B3F1AC00F29E7E /* EmotionService.swift in Sources */,
+				F7ACE7BD22CAF0E1009917D0 /* Keyboard+LayoutGuide.swift in Sources */,
 				F7B1439921B36A040056024A /* UIViewController+Keyboard.swift in Sources */,
 				F7B1439621B328900056024A /* Sentiment.swift in Sources */,
 			);
@@ -518,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 68EDA732BCE3764FF095DC2D /* Pods-Intentions MessagesExtension.debug.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RB42Y8C7YL;
@@ -539,6 +544,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = F3FE228F0054A9DAF682E988 /* Pods-Intentions MessagesExtension.release.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RB42Y8C7YL;
