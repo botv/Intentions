@@ -1,0 +1,2 @@
+model_checkpoint_path: "sentiment_analysis_model"
+all_model_checkpoint_paths: "sentiment_analysis_model"
